@@ -1,0 +1,6 @@
+MYSQL_DB='ufanet_db'
+MYSQL_USER='root'
+MYSQL_PASSWORD='admin' 
+MYSQL_HOST='localhost'
+MYSQL_PORT=3306
+TOKEN='5628882726:AAH_ul9F2hoT0pwUeftxhzYQzyCs3KJlbv0'
