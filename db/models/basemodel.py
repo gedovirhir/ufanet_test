@@ -72,7 +72,7 @@ class basemodel:
                 SELECT id{f_to_select}
                 FROM {table}
                 WHERE {terms} 
-                ORDER BY '{o_by}'
+                ORDER BY {o_by}
                 LIMIT {limit}
                 OFFSET {offset};
                 """

@@ -59,10 +59,10 @@ class tgbot:
         message = update['message']
         chat_id = message['chat']['id']
 
-        #try:
-        response = self.get_response(message)
-        #except Exception as ex:
-        #    response = "Что-то пошло не так"
+        try:
+            response = self.get_response(message)
+        except Exception as ex:
+            response = "Что-то пошло не так"
         
         if response:
             self.send_message(
@@ -133,7 +133,7 @@ class tgbot:
             self.__process_update(
                 update
             )
-    def start_pooling(self, update_timeout = 6000, update_limit = 100):
+    def start_pooling(self, update_timeout = 60, update_limit = 100):
         self.load_middlewares()
         
         while True:

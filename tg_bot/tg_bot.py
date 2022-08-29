@@ -136,7 +136,7 @@ def read_all_handler(message):
     uid = db_user_id(message)
     
     all_notes = msg.get(user_id=uid,
-                        order_by='datetime',
+                        order_by='timestamp',
                         fields_to_select=['content', 'timestamp'])
     
     for note in all_notes:
@@ -209,6 +209,8 @@ def tag_handler(message):
         for tg in tags:
             db_tg = tag.get(title=tg,
                             fields_to_select=['title', 'description'])[0]
+            
+            if not db_tg: return "Такого тэга не существует"
             
             bot.send_message(
                 message['chat']['id'],
